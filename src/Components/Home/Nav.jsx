@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const Nav = () => {
     const navLinks = <>
         <li><Link to="/">Home </Link></li>
-        <li><Link to="/allservices">Services</Link></li>
+        <li><Link to="/allservices">Tranding </Link></li>
     </>
     // change nav color when scrolling 
     const [color, setColor] = useState(false);

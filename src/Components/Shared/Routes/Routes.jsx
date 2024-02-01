@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../Root/Root";
 import Home from "../../Home/Home";
+import MovieSummary from "../Movies/MovieSummary";
 
 const Routes = createBrowserRouter([
     {
@@ -12,10 +13,11 @@ const Routes = createBrowserRouter([
                 path: '/',
                 element: <Home/>,
             },
-            // {
-            //     path: 'services',
-            //     element: <Services />
-            // }
+            {
+                path: '/movieSummary/:id',
+                element: <MovieSummary />,
+                // loader: ({ params }) => fetch(`https://tidy-cleaning-server.vercel.app/services/${params.id}`)
+            }
             // ,
             // {
             //     path: '/allservices',
