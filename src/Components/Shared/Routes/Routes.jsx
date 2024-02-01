@@ -2,46 +2,37 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../Root/Root";
 import Home from "../../Home/Home";
 import MovieSummary from "../Movies/MovieSummary";
+import Login from "../Login/Login";
+import Register from "../Register/Register";
 
 const Routes = createBrowserRouter([
     {
         path: "/",
         // errorElement: <Error />,
-        element: <Root/>,
+        element: <Root />,
         children: [
             {
                 path: '/',
-                element: <Home/>,
+                element: <Home />,
             },
             {
                 path: '/movieSummary/:id',
                 element: <MovieSummary />,
-                // loader: ({ params }) => fetch(`https://tidy-cleaning-server.vercel.app/services/${params.id}`)
-            }
-            // ,
-            // {
-            //     path: '/allservices',
-            //     element: <AllServices />
-            // },
+             
+            },
            
-            // {
-            //     path: '/add-service',
-            //     element: <PrivateRoute> <AddService /></PrivateRoute>
 
-            // },
-
-          
         ]
     },
-  
+
     {
-        // path: '/login',
-        // element: <Login />
+        path: '/login',
+        element: <Login/>
     },
 
     {
-        // path: '/register',
-        // element: <Register />
+        path: '/register',
+        element: <Register/>
     },
 ]);
 

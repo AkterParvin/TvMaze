@@ -1,13 +1,22 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
 
 
 const BookTicket = ({ data }) => {
-    const { url, name, runtime, officialSite, summary, image,language,rating,
+    const { newUser } = useContext(AuthContext);
+    console.log(newUser);
+    // eslint-disable-next-line no-unused-vars
+    const userEmail = newUser?.email;
+    const userName = newUser?.name;
+    const { url, name, runtime, officialSite, summary, image, language, rating,
     } = data
     // console.log(data);
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
-        const name=form.name.value
+        const name = form.name.value
     }
     return (
         <div>
@@ -60,7 +69,7 @@ const BookTicket = ({ data }) => {
                     <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Ticket Price</label>
                 </div>
 
-                
+
                 {/* date */}
                 <div className="relative z-0 w-full mb-6 group">
                     <input
@@ -79,7 +88,7 @@ const BookTicket = ({ data }) => {
                             type="text"
                             name="user_name"
                             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-
+                            defaultValue={userName}
                             required />
                         <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Full name</label>
                     </div>
@@ -89,7 +98,7 @@ const BookTicket = ({ data }) => {
                             type="email"
                             name="user_email"
                             readOnly
-                            defaultValue={''}
+                            defaultValue={userEmail}
                             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         />
                         <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">User Email</label>

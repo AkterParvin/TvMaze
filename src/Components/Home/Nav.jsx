@@ -1,10 +1,35 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Shared/Providers/AuthProvider";
 
 const Nav = () => {
+    const { newUser, logOut } = useContext(AuthContext);
+console.log(newUser);
+    // logout user function 
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                console.log('user logged Out');
+            })
+            .catch(error => console.log(error.message))
+    }
     const navLinks = <>
         <li><Link to="/">Home </Link></li>
         <li><Link to="/allservices">Tranding </Link></li>
+
+        {
+            newUser ? <>
+               
+                <li>
+                    <button onClick={handleLogOut} >Log Out</button>
+
+                </li>
+
+            </>
+
+                :
+                <Link to='/login'><button className="btn btn-outline btn-warning btn-sm ">Login</button></Link>
+        }
     </>
     // change nav color when scrolling 
     const [color, setColor] = useState(false);
