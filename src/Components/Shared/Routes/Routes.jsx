@@ -4,6 +4,7 @@ import Home from "../../Home/Home";
 import MovieSummary from "../Movies/MovieSummary";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const Routes = createBrowserRouter([
     {
@@ -17,7 +18,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/movieSummary/:id',
-                element: <MovieSummary />,
+                element: <PrivateRoute><MovieSummary /></PrivateRoute> ,
              
             },
            
