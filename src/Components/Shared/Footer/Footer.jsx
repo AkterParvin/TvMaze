@@ -19,7 +19,7 @@ const Footer = () => {
                         <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-400">
                             <img src="/logo.png" alt="" />
                         </div>
-                        <span className="self-center font-semibold text-2xl">TidyAid</span>
+                        <span className="self-center font-semibold text-2xl">TV MAZE</span>
                     </a>
                 </div>
                 <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
